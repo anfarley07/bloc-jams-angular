@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-angular.module('blocJams', []);
-=======
 (function() {
     function config($stateProvider, $locationProvider) {
         $locationProvider
@@ -16,6 +13,10 @@ angular.module('blocJams', []);
             .state('album', {
                 url: '/album',
                 templateUrl: '/templates/album.html'
+            })
+            .state('collection', {
+                url: '/collection',
+                templateUrl: '/templates/collection.html'
             });
     }
 
@@ -23,4 +24,3 @@ angular.module('blocJams', []);
       .module('blocJams',['ui.router'])
       .config(config);
 })();
->>>>>>> checkpoint3
