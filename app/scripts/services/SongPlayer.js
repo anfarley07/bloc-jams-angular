@@ -40,7 +40,18 @@
   */
   var getSongIndex = function(song) {
       return currentAlbum.songs.indexOf(song);
+
   };
+
+  /**
+  * @function stopSong
+  * @desc stops the buzz object current playing song
+  * @param {Object} song
+  */
+  var stopSong = function(song) {
+      currentBuzzObject.stop();
+      songPlayer.currentSong.playing = null;
+  }
 
   /**
   * @desc active song object from list of songs
@@ -89,17 +100,36 @@
   };
 
   /**
-  * @function SongPlayer.play
+  * @function SongPlayer.previous
   * @desc determines when move to previous song - uses getSongIndex to obtain index of current song and decrease by one
   * @param click on previous button, {Object} song
   */
   SongPlayer.previous = function() {
       var currentSongIndex = getSongIndex(SongPlayer.currentSong);
-      currentSongIndex--;
+          currentSongIndex--;
 
       if (currentSongIndex < 0) {
-          currentBuzzObject.stop();
-          songPlayer.currentSong.playing = null;
+          stopSong();
+
+      } else {
+          var song = currentAlbum.songs[currentSongIndex];
+          setSong(song);
+          playSong(song);
+      }
+  };
+
+  /**
+  * @function SongPlayer.next
+  * @desc determines when move to previous song - uses getSongIndex to obtain index of current song and increase by one
+  * @param click on next button, {Object} song
+  */
+  SongPlayer.next = function() {
+      var currentSongIndex = getSongIndex(SongPlayer.currentSong);
+          currentSongIndex++;
+
+      if (currentSongIndex > currentAlbum.songs.length) {
+          stopSong();
+
       } else {
           var song = currentAlbum.songs[currentSongIndex];
           setSong(song);
