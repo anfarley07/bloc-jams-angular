@@ -40,7 +40,8 @@
   */
   var getSongIndex = function(song) {
       return currentAlbum.songs.indexOf(song);
-
+      console.log(albumData);
+      console.log(currentAlbum);
   };
 
   /**
@@ -137,7 +138,7 @@
           var song = currentAlbum.songs[currentSongIndex];
           setSong(song);
           playSong(song);
-      } console.log(SongPlayer);
+      } console.log(SongPlayer); console.log(currentAlbum);
   };
 
   return SongPlayer;
