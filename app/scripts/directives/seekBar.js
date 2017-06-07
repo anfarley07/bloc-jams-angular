@@ -7,10 +7,11 @@
             offsetXPercent = Math.max(0, offsetXPercent);
             offsetXPercent = Math.min(1, offsetXPercent);
             return offsetXPercent;
+            console.log(offsetXPercent);
         };
 
         return {
-            templateURL: '/templates/directives/seek_bar.html',
+            templateUrl: '/templates/directives/seek_bar.html',
             replace: true,
             restrict: 'E',
             scope: { },
@@ -29,6 +30,7 @@
 
                 scope.fillStyle = function() {
                     return {width: percentString()};
+                    console.log(scope.fillStyle());
                 };
 
                 scope.onClickSeekBar = function(event) {
