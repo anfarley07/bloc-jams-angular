@@ -40,8 +40,6 @@
   */
   var getSongIndex = function(song) {
       return currentAlbum.songs.indexOf(song);
-      console.log(albumData);
-      console.log(currentAlbum);
   };
 
   /**
@@ -98,9 +96,6 @@
       song = song || SongPlayer.currentSong;
       currentBuzzObject.pause();
       song.playing = false;
-
-      console.log(SongPlayer);
-      console.log(albumData);
   };
 
   /**
@@ -119,7 +114,7 @@
           var song = currentAlbum.songs[currentSongIndex];
           setSong(song);
           playSong(song);
-      } console.log(albumData);
+      } 
   };
 
   /**
@@ -138,7 +133,7 @@
           var song = currentAlbum.songs[currentSongIndex];
           setSong(song);
           playSong(song);
-      } console.log(SongPlayer); console.log(currentAlbum);
+      }
   };
 
   return SongPlayer;
