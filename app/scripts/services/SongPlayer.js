@@ -168,7 +168,7 @@
   };
 
   SongPlayer.setCurrentVolume = function(volume) {
-      if(currentBuzzObject) {
+      if(songPlayer.currentSong === song) {
           currentBuzzObject.setVolume(volume);
       }
   };

@@ -28,7 +28,7 @@
                  <div class="total-time">{{ playerBar.songPlayer.currentSong.duration }}</div>
              </div>
          </div>
-         <div class="control-group volume" value="{{ playerBar.songPlayer.volume }}" max="{{ playerBar.songPlayer.volume.max }}" on-change="playerBar.songPlayer.setCurrentVolume(volume)">
+         <div class="control-group volume" value="{{ playerBar.songPlayer.volume }}" max="{{ playerBar.songPlayer.setCurrentVolume.max }}" on-change="playerBar.songPlayer.setCurrentVolume(volume)">
              <span class="icon ion-volume-high"></span>
              <seek-bar></seek-bar>
          </div>
